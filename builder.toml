@@ -1,49 +1,49 @@
 description = "Tiny base image (Ubuntu Jammy Jellyfish build image, distroless-like run image) with buildpacks for Java, Java Native Image and Go"
 
 [[buildpacks]]
-  uri = "docker://docker.io/paketobuildpacks/go:4.19.24"
-  version = "4.19.24"
+  uri = "docker://docker.io/paketobuildpacks/go:4.21.0"
+  version = "4.21.0"
 
 [[buildpacks]]
-  uri = "docker://docker.io/paketobuildpacks/java-native-image:14.9.0"
-  version = "14.9.0"
+  uri = "docker://docker.io/paketobuildpacks/java-native-image:14.12.0"
+  version = "14.12.0"
 
 [[buildpacks]]
-  uri = "docker://docker.io/paketobuildpacks/java:22.3.0"
-  version = "22.3.0"
+  uri = "docker://docker.io/paketobuildpacks/java:22.5.0"
+  version = "22.5.0"
 
 [[buildpacks]]
-  uri = "docker://docker.io/paketobuildpacks/procfile:5.13.6"
-  version = "5.13.6"
+  uri = "docker://docker.io/paketobuildpacks/procfile:5.15.0"
+  version = "5.15.0"
 
 [lifecycle]
-  version = "0.21.16"
+  version = "0.21.20"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/java-native-image"
-    version = "14.9.0"
+    version = "14.12.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/java"
-    version = "22.3.0"
+    version = "22.5.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/go"
-    version = "4.19.24"
+    version = "4.21.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
-    version = "5.13.6"
+    version = "5.15.0"
 
 [stack]
-  build-image = "docker.io/paketobuildpacks/build-jammy-tiny:0.2.160"
+  build-image = "docker.io/paketobuildpacks/build-jammy-tiny:0.2.174"
   id = "io.buildpacks.stacks.jammy.tiny"
   run-image = "index.docker.io/paketobuildpacks/run-jammy-tiny:latest"
